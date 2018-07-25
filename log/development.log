@@ -1,0 +1,453 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (25.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCours (20180725150705)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "cours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "titre" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725150705_create_cours.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725150705"]]
+  ↳ bin/rails:9
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 15:08:48.632670"], ["updated_at", "2018-07-25 15:08:48.632670"]]
+  ↳ bin/rails:9
+  [1m[35m (10.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateLecons (20180725150906)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725150906_create_lecons.rb:3
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "titre" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725150906_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725150906"]]
+  ↳ bin/rails:9
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to AddColumnLecon (20180725153053)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "lecons" ADD "cours_id" integer[0m
+  ↳ db/migrate/20180725153053_add_column_lecon.rb:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180725153053_add_column_lecon.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cours_id" ON "lecons" ("cours_id")[0m
+  ↳ db/migrate/20180725153053_add_column_lecon.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725153053"]]
+  ↳ bin/rails:9
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnCours (20180725153410)
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725153410"]]
+  ↳ bin/rails:9
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "teal"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 15:54:16.905976"], ["updated_at", "2018-07-25 15:54:16.905976"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (28.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "red"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 15:54:16.945017"], ["updated_at", "2018-07-25 15:54:16.945017"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCour Create (1.1ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "sky blue"], ["description", "All right, Mr. DeMille, I'm ready for my closeup."], ["created_at", "2018-07-25 15:54:36.396183"], ["updated_at", "2018-07-25 15:54:36.396183"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (8.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "blue"], ["description", "Fasten your seatbelts. It's going to be a bumpy night."], ["created_at", "2018-07-25 15:54:36.412790"], ["updated_at", "2018-07-25 15:54:36.412790"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (6.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mLecon Create (3.2ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Shin Hae-chul"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 15:58:26.011408"], ["updated_at", "2018-07-25 15:58:26.011408"], ["cours_id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (12.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Solbi"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 15:58:26.033945"], ["updated_at", "2018-07-25 15:58:26.033945"], ["cours_id", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[36mLecon Create (0.7ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Tim"], ["description", "You talking to me?"], ["created_at", "2018-07-25 15:58:26.046671"], ["updated_at", "2018-07-25 15:58:26.046671"], ["cours_id", 4]]
+  ↳ db/seeds.rb:17
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (1.0ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "plum"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:00:48.104747"], ["updated_at", "2018-07-25 16:00:48.104747"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (7.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "pink"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:00:48.123245"], ["updated_at", "2018-07-25 16:00:48.123245"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "azure"], ["description", "I love the smell of napalm in the morning."], ["created_at", "2018-07-25 16:00:48.136235"], ["updated_at", "2018-07-25 16:00:48.136235"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "blue"], ["description", "You talking to me?"], ["created_at", "2018-07-25 16:00:48.149496"], ["updated_at", "2018-07-25 16:00:48.149496"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (7.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "tan"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 16:00:48.163426"], ["updated_at", "2018-07-25 16:00:48.163426"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (4.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "plum"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 16:00:48.174793"], ["updated_at", "2018-07-25 16:00:48.174793"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (7.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "azure"], ["description", "Here's looking at you, kid."], ["created_at", "2018-07-25 16:00:48.188117"], ["updated_at", "2018-07-25 16:00:48.188117"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "green"], ["description", "Fasten your seatbelts. It's going to be a bumpy night."], ["created_at", "2018-07-25 16:00:48.201933"], ["updated_at", "2018-07-25 16:00:48.201933"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "plum"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 16:00:48.215211"], ["updated_at", "2018-07-25 16:00:48.215211"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "magenta"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 16:00:48.228407"], ["updated_at", "2018-07-25 16:00:48.228407"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Sohee"], ["description", "Here's looking at you, kid."], ["created_at", "2018-07-25 16:00:48.274619"], ["updated_at", "2018-07-25 16:00:48.274619"], ["cours_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (1.1ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Jun Hyoseong"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 16:00:48.299605"], ["updated_at", "2018-07-25 16:00:48.299605"], ["cours_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Hyelim"], ["description", "Go ahead, make my day."], ["created_at", "2018-07-25 16:00:48.313213"], ["updated_at", "2018-07-25 16:00:48.313213"], ["cours_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.7ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Seo Joohyun"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:00:48.325245"], ["updated_at", "2018-07-25 16:00:48.325245"], ["cours_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (7.1ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Lee Gi-kwang"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:00:48.338189"], ["updated_at", "2018-07-25 16:00:48.338189"], ["cours_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (3.1ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Park Shin-hye"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:00:48.367695"], ["updated_at", "2018-07-25 16:00:48.367695"], ["cours_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.7ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Lee Hi"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:00:48.383098"], ["updated_at", "2018-07-25 16:00:48.383098"], ["cours_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.7ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Jinyoung"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 16:00:48.395886"], ["updated_at", "2018-07-25 16:00:48.395886"], ["cours_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (7.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Ryu Hyoyoung"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:00:48.409497"], ["updated_at", "2018-07-25 16:00:48.409497"], ["cours_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Jun.K"], ["description", "I love the smell of napalm in the morning."], ["created_at", "2018-07-25 16:00:48.421462"], ["updated_at", "2018-07-25 16:00:48.421462"], ["cours_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateCours (20180725150705)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "cours" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "titre" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725150705_create_cours.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725150705"]]
+  ↳ bin/rails:9
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateLecons (20180725150906)
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "lecons" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "titre" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180725150906_create_lecons.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (5.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725150906"]]
+  ↳ bin/rails:9
+  [1m[35m (24.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to AddColumnLecon (20180725153053)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[35mALTER TABLE "lecons" ADD "cours_id" integer[0m
+  ↳ db/migrate/20180725153053_add_column_lecon.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_lecons_on_cours_id" ON "lecons" ("cours_id")[0m
+  ↳ db/migrate/20180725153053_add_column_lecon.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180725153053"]]
+  ↳ bin/rails:9
+  [1m[35m (19.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (3.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-25 16:03:33.066471"], ["updated_at", "2018-07-25 16:03:33.066471"]]
+  ↳ bin/rails:9
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "maroon"], ["description", "Here's looking at you, kid."], ["created_at", "2018-07-25 16:03:40.691282"], ["updated_at", "2018-07-25 16:03:40.691282"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.8ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "green"], ["description", "All right, Mr. DeMille, I'm ready for my closeup."], ["created_at", "2018-07-25 16:03:40.707949"], ["updated_at", "2018-07-25 16:03:40.707949"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "indigo"], ["description", "I'm going to make him an offer he can't refuse."], ["created_at", "2018-07-25 16:03:40.721490"], ["updated_at", "2018-07-25 16:03:40.721490"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "fuchsia"], ["description", "I'm going to make him an offer he can't refuse."], ["created_at", "2018-07-25 16:03:40.733173"], ["updated_at", "2018-07-25 16:03:40.733173"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "turquoise"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:03:40.745936"], ["updated_at", "2018-07-25 16:03:40.745936"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "gold"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 16:03:40.758240"], ["updated_at", "2018-07-25 16:03:40.758240"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.7ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "violet"], ["description", "Toto, I've got a feeling we're not in Kansas anymore."], ["created_at", "2018-07-25 16:03:40.769786"], ["updated_at", "2018-07-25 16:03:40.769786"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "sky blue"], ["description", "Here's looking at you, kid."], ["created_at", "2018-07-25 16:03:40.792047"], ["updated_at", "2018-07-25 16:03:40.792047"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (0.9ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "white"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:03:40.807074"], ["updated_at", "2018-07-25 16:03:40.807074"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (10.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[36mCour Create (1.5ms)[0m  [1m[32mINSERT INTO "cours" ("titre", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["titre", "red"], ["description", "I'm going to make him an offer he can't refuse."], ["created_at", "2018-07-25 16:03:40.825216"], ["updated_at", "2018-07-25 16:03:40.825216"]]
+  ↳ db/seeds.rb:6
+  [1m[35m (33.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:6
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (7.0ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Victoria Song"], ["description", "All right, Mr. DeMille, I'm ready for my closeup."], ["created_at", "2018-07-25 16:03:40.932407"], ["updated_at", "2018-07-25 16:03:40.932407"], ["cours_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (1.1ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Bang Yong Guk"], ["description", "I love the smell of napalm in the morning."], ["created_at", "2018-07-25 16:03:40.961598"], ["updated_at", "2018-07-25 16:03:40.961598"], ["cours_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Heo Young Saeng"], ["description", "All right, Mr. DeMille, I'm ready for my closeup."], ["created_at", "2018-07-25 16:03:40.986190"], ["updated_at", "2018-07-25 16:03:40.986190"], ["cours_id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.9ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Park Myeong-su"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:03:41.004711"], ["updated_at", "2018-07-25 16:03:41.004711"], ["cours_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (1.6ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Ha Ji-won"], ["description", "Here's looking at you, kid."], ["created_at", "2018-07-25 16:03:41.020848"], ["updated_at", "2018-07-25 16:03:41.020848"], ["cours_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (8.2ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Kim Kyung-ho"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:03:41.046518"], ["updated_at", "2018-07-25 16:03:41.046518"], ["cours_id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (10.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (3.4ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Seo In-guk"], ["description", "May the Force be with you."], ["created_at", "2018-07-25 16:03:41.077426"], ["updated_at", "2018-07-25 16:03:41.077426"], ["cours_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "JOO"], ["description", "I'm going to make him an offer he can't refuse."], ["created_at", "2018-07-25 16:03:41.100286"], ["updated_at", "2018-07-25 16:03:41.100286"], ["cours_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Narsha"], ["description", "Frankly, my dear, I don’t give a damn."], ["created_at", "2018-07-25 16:03:41.118671"], ["updated_at", "2018-07-25 16:03:41.118671"], ["cours_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mLecon Create (0.8ms)[0m  [1m[32mINSERT INTO "lecons" ("titre", "description", "created_at", "updated_at", "cours_id") VALUES (?, ?, ?, ?, ?)[0m  [["titre", "Haha"], ["description", "What we've got here is failure to communicate."], ["created_at", "2018-07-25 16:03:41.137729"], ["updated_at", "2018-07-25 16:03:41.137729"], ["cours_id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (17.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
