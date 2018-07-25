@@ -1,5 +1,8 @@
 # README
 A Rails application which manipulate database.
+It reproduce an online learning platform composed of class and lessons.
+
+Plateforme d'apprentissage en ligne composé de cours et de lessons
 
 ## Installation
 
