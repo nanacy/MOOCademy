@@ -4,9 +4,9 @@ It reproduce an online learning platform composed of class and lessons.
 
 ## Installation
 
-Execute to install the necessary gems and the correct version of Ruby:  
-Version of ruby : **'2.5.1'**
-Gem **'Faker'** is included
+Version of ruby : **'2.5.1'**  
+Gem **'Faker'** is included  
+Execute the following line to install the necessary gems and the correct version of Ruby:  
 ```
 $ bundle install
 ```
