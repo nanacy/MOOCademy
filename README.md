@@ -18,3 +18,8 @@ Execute this line to fulfill the database :
 ```
 $ rails db:seed
 ```
+
+## Display the program
+
+* Open the file **development.sqlite3** with **DB Browser for SQLite**
+* Do not forget to actualize and enjoy.
