@@ -27,3 +27,6 @@ $ rails db:seed
 * Open the file **development.sqlite3** (in the db file) with **DB Browser for SQLite**
 * Do not forget to actualize and enjoy
 
+--------------------------------------
+
+Gwendoline & Nancy CASSAND
