@@ -1,7 +1,9 @@
 # README
 
 # Installation
--------------------------------
+
 Execute :
 
-* bundle install
+'''
+bundle install
+'''
